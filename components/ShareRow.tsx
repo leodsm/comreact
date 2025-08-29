@@ -1,14 +1,21 @@
 "use client";
-export default function ShareRow({ title }: { title: string }){
+import { useToast } from "./ToastProvider";
+
+export default function ShareRow({ title }: { title: string }) {
+  const toast = useToast();
   const share = async () => {
     const url = typeof window !== "undefined" ? window.location.href : "";
     try {
-      if (navigator.share) await navigator.share({ title, url });
-      else {
+      if (navigator.share) {
+        await navigator.share({ title, url });
+        toast("Link compartilhado!", "success");
+      } else {
         await navigator.clipboard.writeText(url);
-        alert("Link copiado!");
+        toast("Link copiado!", "success");
       }
-    } catch {}
+    } catch {
+      toast("Não foi possível compartilhar o link", "error");
+    }
   };
   return (
     <div className="mt-4 flex items-center gap-2">
