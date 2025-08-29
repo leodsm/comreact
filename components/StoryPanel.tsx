@@ -16,15 +16,13 @@ export default function StoryPanel({ title, subtitle, image, article }: { title?
         {title ? <h2 className="text-xl font-poppins font-bold">{title}</h2> : null}
         {subtitle ? <p className="opacity-90">{subtitle}</p> : null}
         {article ? (
-          <a
-            href="#"
-            className="mt-3 inline-block underline underline-offset-2 decoration-2"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
+          <button
+            type="button"
+            aria-label="Leia a matéria completa"
+            className="mt-3 inline-block bg-transparent p-0 underline underline-offset-2 decoration-2"
           >
             Leia a matéria completa
-          </a>
+          </button>
         ) : null}
       </div>
     </div>
