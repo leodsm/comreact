@@ -1,4 +1,4 @@
-import type { Post } from "../components/PostCard";
+import type { Post } from "../types/post";
 
 export const posts: Post[] = [
   {

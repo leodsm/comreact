@@ -3,9 +3,7 @@ import Image from "next/image";
 import { categoryColor } from "../lib/colors";
 import { BLUR_SVG } from "../lib/blur";
 import { motion } from "framer-motion";
-
-export type Slide = { type:'image'|'video'|'text'; src?:string; alt?:string; title?:string; subtitle?:string; };
-export type Post = { id:string; category:string; title:string; subtitle:string; image:string; slides: Slide[]; article?: string; };
+import type { Post } from "../types/post";
 
 export default function PostCard({ post, onOpen }: { post: Post; onOpen: (post: Post) => void; }) {
   const catColor = categoryColor(post.category);
