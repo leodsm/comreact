@@ -2,7 +2,7 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import type { Post } from "./PostCard";
+import type { Post } from "../types/post";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y, Mousewheel, EffectCreative, Parallax } from "swiper/modules";
