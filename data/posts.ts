@@ -1,11 +1,6 @@
 import type { Post } from "../types/post";
-import type { Category } from "../lib/categories";
 
-interface PostData extends Omit<Post, "category"> {
-  category: Category;
-}
-
-export const posts: PostData[] = [
+export const posts: Post[] = [
   {
     id: "p01",
     category: "Cultura",
