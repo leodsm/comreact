@@ -1,7 +1,10 @@
 "use client";
-export type Category = "Tudo" | "Cultura" | "Gastronomia" | "Esporte" | "Turismo";
+import { categories } from "../lib/categories";
+
+export type Category = "Tudo" | (typeof categories)[number];
+
 export default function CategoryFilter({ value, onChange }: { value: Category; onChange: (c: Category)=>void; }){
-  const cats: Category[] = ["Tudo","Cultura","Gastronomia","Esporte","Turismo"];
+  const cats: Category[] = ["Tudo", ...categories];
   return (
     <div className="flex flex-wrap gap-2 mb-4">
       {cats.map(c => (
