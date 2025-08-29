@@ -1,10 +1,10 @@
 "use client";
-import { categories } from "../lib/categories";
+import { categories, type Category } from "../lib/categories";
 
-export type Category = "Tudo" | (typeof categories)[number];
+export type CategoryFilterValue = "Tudo" | Category;
 
-export default function CategoryFilter({ value, onChange }: { value: Category; onChange: (c: Category)=>void; }){
-  const cats: Category[] = ["Tudo", ...categories];
+export default function CategoryFilter({ value, onChange }: { value: CategoryFilterValue; onChange: (c: CategoryFilterValue)=>void; }){
+  const cats: CategoryFilterValue[] = ["Tudo", ...categories];
   return (
     <div className="flex flex-wrap gap-2 mb-4">
       {cats.map(c => (

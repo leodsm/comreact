@@ -5,7 +5,7 @@ import PostCard from "../components/PostCard";
 import StoryDeckModal from "../components/StoryDeckModal";
 import { posts as samplePosts } from "../data/posts";
 import { useState, useMemo } from "react";
-import CategoryFilter, { Category } from "../components/CategoryFilter";
+import CategoryFilter, { CategoryFilterValue } from "../components/CategoryFilter";
 import SkeletonCard from "../components/SkeletonCard";
 import { useInfinite } from "../hooks/useInfinite";
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ import type { Post } from "../types/post";
 export default function Page() {
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [cat, setCat] = useState<Category>("Tudo");
+  const [cat, setCat] = useState<CategoryFilterValue>("Tudo");
 
   const posts = samplePosts.slice(2);
 
