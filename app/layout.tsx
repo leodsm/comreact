@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Script from "next/script";
 import { inter, poppins } from "./fonts";
+import ToastProvider from "../components/ToastProvider";
 
 export const metadata: Metadata = {
   title: "ComMarília",
@@ -30,7 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: noFlash }} />
       </head>
       <body>
-        <div className="mx-auto w-full max-w-6xl">{children}</div>
+        <ToastProvider>
+          <div className="mx-auto w-full max-w-6xl">{children}</div>
+        </ToastProvider>
         <Script id="sw-register" strategy="afterInteractive">{`
           if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js').catch(()=>{});
