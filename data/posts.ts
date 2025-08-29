@@ -131,3 +131,14 @@ export const posts: PostData[] = [
     article: "",
   }
 ];
+
+/**
+ * Retrieve sample posts.
+ *
+ * @param start - Index of the first post to include (inclusive).
+ * @param end - Index after the last post to include (exclusive).
+ * @returns A slice of the sample posts array.
+ */
+export function getPosts(start = 0, end = posts.length): PostData[] {
+  return posts.slice(start, end);
+}

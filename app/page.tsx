@@ -16,7 +16,9 @@ export default function Page() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [cat, setCat] = useState<Category>("Tudo");
 
-  const posts = samplePosts.slice(2);
+  // Use the entire list of sample posts by default.
+  // To show a subset, use getPosts(start, end) from `data/posts`.
+  const posts = samplePosts;
 
   const filtered = useMemo(() => {
     if (cat === "Tudo") return posts;

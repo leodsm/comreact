@@ -36,6 +36,10 @@ npm install
 3. O hook `useInfinite` carrega mais cards conforme o usuário rola a página.
 4. Cada card (`PostCard`) abre o `StoryDeckModal`, que apresenta as imagens e textos do post em um carrossel vertical no estilo "stories".
 
+### Subconjunto de posts
+
+Caso seja necessário trabalhar apenas com parte da lista, a função `getPosts(start, end)` exportada de `data/posts.ts` permite informar o intervalo desejado.
+
 ## Adicionando novos posts ou categorias
 
 ### Novos posts
