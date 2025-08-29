@@ -44,6 +44,5 @@ Edite `data/posts.ts` e inclua um novo objeto seguindo a interface `Post`.
 
 ### Novas categorias
 
-1. Acrescente a categoria no tipo e na lista de botões em `components/CategoryFilter.tsx`.
-2. Defina uma cor correspondente em `lib/colors.ts`.
-3. Utilize a nova categoria nos posts desejados em `data/posts.ts`.
+1. Acrescente a nova categoria e sua cor em `lib/categories.ts` (constantes `categories` e `categoryColors`).
+2. Utilize a nova categoria nos posts desejados em `data/posts.ts`.
