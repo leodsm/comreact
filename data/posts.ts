@@ -1,6 +1,11 @@
 import type { Post } from "../types/post";
+import type { Category } from "../lib/categories";
 
-export const posts: Post[] = [
+interface PostData extends Omit<Post, "category"> {
+  category: Category;
+}
+
+export const posts: PostData[] = [
   {
     id: "p01",
     category: "Cultura",
@@ -11,7 +16,7 @@ export const posts: Post[] = [
       { type: "image", src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop", title: "Palco principal", subtitle: "Atrações a partir das 18h" },
       { type: "image", src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop", title: "Mostra de curtas", subtitle: "Cinema na praça" }
     ],
-    article: "O Festival de Inverno reúne artistas locais e visitantes..."
+    article: "O Festival de Inverno reúne artistas locais e visitantes...",
   },
   {
     id: "p02",
@@ -23,7 +28,7 @@ export const posts: Post[] = [
       { type: "image", src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop", title: "Notas frutadas", subtitle: "Degustação guiada" },
       { type: "image", src: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop", title: "Métodos filtrados", subtitle: "V60, Aeropress e mais" }
     ],
-    article: "O roteiro do café especial passa por torrefações artesanais..."
+    article: "O roteiro do café especial passa por torrefações artesanais...",
   },
   {
     id: "p03",
@@ -34,7 +39,7 @@ export const posts: Post[] = [
     slides: [
       { type: "image", src: "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=1200&auto=format&fit=crop", title: "Circuito das águas", subtitle: "Nível moderado" }
     ],
-    article: "As trilhas do Rio Peixe revelam paisagens pouco conhecidas..."
+    article: "As trilhas do Rio Peixe revelam paisagens pouco conhecidas...",
   },
   {
     id: "p04",
@@ -45,7 +50,7 @@ export const posts: Post[] = [
     slides: [
       { type: "image", src: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop", title: "Clássico municipal", subtitle: "Ingressos populares" }
     ],
-    article: "A Copa Regional atrai equipes de toda a região..."
+    article: "A Copa Regional atrai equipes de toda a região...",
   },
   {
     id: "p05",
@@ -56,7 +61,7 @@ export const posts: Post[] = [
     slides: [
       { type: "image", src: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200&auto=format&fit=crop", title: "Autores locais", subtitle: "Sessão de autógrafos" }
     ],
-    article: "A feira reúne editoras e autores independentes..."
+    article: "A feira reúne editoras e autores independentes...",
   },
   {
     id: "p06",
@@ -67,7 +72,7 @@ export const posts: Post[] = [
     slides: [
       { type: "image", src: "https://images.unsplash.com/photo-1472148083604-64f1084980b6?q=80&w=1200&auto=format&fit=crop", title: "Anos 30 e 40", subtitle: "Passeio guiado" }
     ],
-    article: "O roteiro destaca fachadas e histórias curiosas..."
+    article: "O roteiro destaca fachadas e histórias curiosas...",
   },
   {
     id: "p07",
@@ -78,7 +83,7 @@ export const posts: Post[] = [
     slides: [
       { type: "image", src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop", title: "Pastéis doces", subtitle: "Experimente novidades" }
     ],
-    article: ""
+    article: "",
   },
   {
     id: "p08",
@@ -87,7 +92,7 @@ export const posts: Post[] = [
     subtitle: "Inscrições abertas",
     image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
     slides: [],
-    article: ""
+    article: "",
   },
   {
     id: "p09",
@@ -96,7 +101,7 @@ export const posts: Post[] = [
     subtitle: "Grupos convidados",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
     slides: [],
-    article: ""
+    article: "",
   },
   {
     id: "p10",
@@ -105,7 +110,7 @@ export const posts: Post[] = [
     subtitle: "Mirantes e cafés",
     image: "https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=1200&auto=format&fit=crop",
     slides: [],
-    article: ""
+    article: "",
   },
   {
     id: "p11",
@@ -114,7 +119,7 @@ export const posts: Post[] = [
     subtitle: "Roteiro de feirinhas",
     image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop",
     slides: [],
-    article: ""
+    article: "",
   },
   {
     id: "p12",
@@ -123,6 +128,6 @@ export const posts: Post[] = [
     subtitle: "Pedal coletivo domingo",
     image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop",
     slides: [],
-    article: ""
+    article: "",
   }
 ];
