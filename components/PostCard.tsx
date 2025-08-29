@@ -25,7 +25,7 @@ export default function PostCard({ post, onOpen }: { post: Post; onOpen: (post: 
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width:768px) 100vw, 33vw"
           placeholder="blur"
-          blurDataURL={BLUR_SVG()}
+          blurDataURL={BLUR_SVG(8, 8, post.id)}
         />
         <div className="overlay-gradient absolute inset-0"></div>
       </div>
