@@ -7,9 +7,13 @@ export function useInfinite<T>(all: T[], step = 9){
   useEffect(() => {
     const el = ref.current;
     if(!el) return;
-    const ob = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) setLimit(l => Math.min(l + step, all.length));
+    const ob = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting)
+          setLimit((l) => {
+            if (l + step >= all.length) ob.unobserve(el);
+            return Math.min(l + step, all.length);
+          });
       });
     });
     ob.observe(el);
