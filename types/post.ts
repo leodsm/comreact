@@ -1,3 +1,5 @@
+import type { Category } from "../lib/categories";
+
 export interface Slide {
   type: 'image' | 'video' | 'text';
   src?: string;
@@ -8,7 +10,7 @@ export interface Slide {
 
 export interface Post {
   id: string;
-  category: string;
+  category: Category;
   title: string;
   subtitle: string;
   image: string;
