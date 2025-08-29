@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Swiper } from "swiper/react";
 import { Pagination, Keyboard, A11y, Mousewheel, Parallax } from "swiper/modules";
 import type { Post } from "../types/post";
@@ -17,8 +16,6 @@ interface SlideData {
 }
 
 export default function StoryDeck({ posts, startIndex }: { posts: Post[]; startIndex: number }) {
-  const [postIndex, setPostIndex] = useState(startIndex);
-
   const slidesFor = (post: Post): SlideData[] => {
     const base = [{ title: post.title, subtitle: post.subtitle, image: post.image }];
     const extras = (post.slides || []).map((s) => ({
@@ -37,7 +34,6 @@ export default function StoryDeck({ posts, startIndex }: { posts: Post[]; startI
       keyboard={{ enabled: true }}
       pagination={{ clickable: true }}
       initialSlide={startIndex}
-      onSlideChange={(e) => setPostIndex(e.activeIndex)}
       className="h-full w-full"
       parallax
     >
