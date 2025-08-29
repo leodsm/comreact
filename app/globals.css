@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS tokens e temas */
+:root {
+  --brand-blue: #0E3AAF;
+  --brand-orange: #FF7A1A;
+  --brand-red: #F04438;
+  --bg: #ffffff;
+  --surface: #f7f7fb;
+  --fg: #0f1424;
+  --muted: #6b7280;
+}
+:root.dark {
+  --bg: #0b0f1d;
+  --surface: #0f1424;
+  --fg: #e5e7eb;
+  --muted: #9ca3af;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); }
+
+/* fontes utilitárias */
+.font-poppins { font-family: var(--font-poppins), ui-sans-serif, system-ui, -apple-system; }
+
+/* helpers visuais */
+.overlay-gradient {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.6) 85%);
+}
+.story-safe { padding: 18px 16px calc(18px + env(safe-area-inset-bottom)); }
+
+.badge {
+  @apply inline-block px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide rounded-full border;
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+
+.rounded-xl3 { border-radius: 20px; }
+
+/* header com linha inferior */
+header.header-line { @apply sticky top-0 z-40 bg-transparent backdrop-blur border-b border-white/20 dark:border-white/10; }
+
+/* ring sutil no hover */
+.card-ring::after {
+  content: "";
+  position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 0 rgba(255,255,255,0);
+  transition: box-shadow .2s ease;
+}
+.group:hover .card-ring::after {
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.15);
+}
